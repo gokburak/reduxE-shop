@@ -10,7 +10,7 @@ import { Provider } from "react-redux";
 const store= createStore(reducer)
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(
+ReactDOM.render( 
   <React.StrictMode>
     <Provider store={store} >
       <Router>

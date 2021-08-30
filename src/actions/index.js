@@ -1,6 +1,6 @@
 
-export const sepetEkle = id =>{
-    return{type:"Sepete Ekle",payload:id}
+export const sepeteEkle = book =>{
+    return{type:"Sepete Ekle",payload:book}
 }
 
 

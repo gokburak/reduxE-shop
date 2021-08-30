@@ -1,9 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { sepeteEkle } from "../actions";
 
 const Products = (props) => {
-  console.log(props.bookList);
+  console.log(props
+    );
   return (
     <div>
       <h2>
@@ -11,13 +13,13 @@ const Products = (props) => {
         <Link to="/Cart">Sepetim</Link>
       </h2>
       {props.bookList.map((book) => (
-        <div className="book">
+        <div key={book.id}  className="book">
           <img src={book.image} alt={book.name} />
           <div>
             <h4>{book.name}</h4>
             <p>Yazar: {book.author}</p>
             <p>Fiyat: &#8378; {book.price}</p>
-            <button>Sepete Ekle</button>
+            <button onClick={() => props.sepeteEkle(book)}>Sepete Ekle</button>
           </div>
         </div>
       ))}
@@ -27,8 +29,10 @@ const Products = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    bookList: state.bookList
+    bookList: state.bookList,
+    cart: state.cart,
   };
 };
 
-export default connect(mapStateToProps)(Products);
+
+export default connect(mapStateToProps, {sepeteEkle})(Products);
