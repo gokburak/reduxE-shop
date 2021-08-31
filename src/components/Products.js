@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import { sepeteEkle } from "../actions";
 
 const Products = (props) => {
-  console.log(props
-    );
+  console.log(props);
   return (
     <div>
       <h2>
@@ -13,7 +12,7 @@ const Products = (props) => {
         <Link to="/Cart">Sepetim</Link>
       </h2>
       {props.bookList.map((book) => (
-        <div key={book.id}  className="book">
+        <div key={book.id} className="book">
           <img src={book.image} alt={book.name} />
           <div>
             <h4>{book.name}</h4>
@@ -34,5 +33,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-
-export default connect(mapStateToProps, {sepeteEkle})(Products);
+export default connect(mapStateToProps, { sepeteEkle })(Products);

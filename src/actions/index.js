@@ -1,6 +1,6 @@
 
 export const sepeteEkle = book =>{
-    return{type:"Sepete Ekle",payload:book}
+    return{type:"SEPETE_EKLE",payload:book}
 }
 
 
